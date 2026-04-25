@@ -586,7 +586,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(212,175,55,.1);padd
     <div style="background:linear-gradient(145deg,rgba(21,8,48,.95),rgba(8,2,22,.98));border:1px solid rgba(212,175,55,.25);border-radius:20px;padding:28px">
       <label style="display:block;color:var(--gold);font-size:10px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:1.5px">Your Achievement (in your own words)</label>
       <textarea id="cft-input" style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:10px;color:#fff;padding:11px 14px;font-size:14px;font-family:'Cormorant Garamond',serif;resize:vertical;outline:none;min-height:70px;transition:all .25s;margin-bottom:16px;line-height:1.7" placeholder='e.g. "I led a team of 8 and increased sales by 40%" or "I improved student pass rates significantly"' onfocus="this.style.borderColor='rgba(212,175,55,.52)'" onblur="this.style.borderColor='rgba(212,175,55,.18)'"></textarea>
-      <button onclick="runCultureTranslator()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a0a3a;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;box-shadow:0 6px 26px rgba(212,175,55,.38)">🌍 Translate for All 6 Countries →</button>
+      <button id="cft-run-btn" onclick="runCultureTranslator()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#1a0a3a;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;box-shadow:0 6px 26px rgba(212,175,55,.38)">🌍 Translate for All 6 Countries →</button>
       <div id="cft-result" style="display:none;margin-top:20px">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px" id="cft-cards"></div>
       </div>
@@ -619,7 +619,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(212,175,55,.1);padd
           </select>
         </div>
       </div>
-      <button onclick="runSkillGap()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;box-shadow:0 6px 26px rgba(124,58,237,.38)">📊 Analyse My Skill Gap →</button>
+      <button id="sgr-run-btn" onclick="runSkillGap()" style="width:100%;padding:13px;background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;box-shadow:0 6px 26px rgba(124,58,237,.38)">📊 Analyse My Skill Gap →</button>
       <div id="sgr-result" style="display:none;margin-top:20px">
         <div id="sgr-bars" style="margin-bottom:18px"></div>
         <div id="sgr-output" style="background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.14);border-radius:12px;padding:16px;color:rgba(255,255,255,.85);font-size:14px;line-height:1.85;font-family:'Cormorant Garamond',serif;white-space:pre-wrap"></div>
@@ -754,7 +754,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(212,175,55,.1);padd
           <input id="visa-from" type="text" style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.18);border-radius:10px;color:#fff;padding:11px 13px;font-size:14px;font-family:'Cormorant Garamond',serif;outline:none;transition:all .25s" placeholder="e.g. Zimbabwe" onfocus="this.style.borderColor='rgba(212,175,55,.52)'" onblur="this.style.borderColor='rgba(212,175,55,.18)'"/>
         </div>
       </div>
-      <button onclick="runVisaAssistant()" style="width:100%;padding:13px;background:linear-gradient(135deg,#1a6b3a,#0d4a28);color:#fff;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;box-shadow:0 6px 26px rgba(46,204,113,.25)">🛂 Find My Best Visa Pathways →</button>
+      <button id="visa-run-btn" onclick="runVisaAssistant()" style="width:100%;padding:13px;background:linear-gradient(135deg,#1a6b3a,#0d4a28);color:#fff;border:none;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Playfair Display',serif;box-shadow:0 6px 26px rgba(46,204,113,.25)">🛂 Find My Best Visa Pathways →</button>
       <div id="visa-result" style="display:none;margin-top:20px">
         <div id="visa-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:14px"></div>
         <div id="visa-output" style="background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.14);border-radius:12px;padding:16px;color:rgba(255,255,255,.85);font-size:14px;line-height:1.85;font-family:'Cormorant Garamond',serif;white-space:pre-wrap"></div>
@@ -1048,7 +1048,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(212,175,55,.1);padd
           <div style="color:rgba(255,255,255,.85);font-size:14px">✅ 30-day money-back guarantee</div>
           <div style="color:rgba(255,255,255,.85);font-size:14px">✅ Renews monthly — cancel anytime</div>
         </div>
-        <a href="https://selar.com/b437m02123" target="_blank" style="display:block;width:100%;padding:14px;background:linear-gradient(135deg,#FFD700,#B8860B);color:#1a0a3a;border:none;border-radius:11px;font-weight:800;font-size:15px;cursor:pointer;font-family:'Playfair Display',serif;text-decoration:none;text-align:center;box-sizing:border-box">👑 Pay $9.99 — Get Pro Access</a>
+        <a href="https://selar.com/r437442711" target="_blank" style="display:block;width:100%;padding:14px;background:linear-gradient(135deg,#FFD700,#B8860B);color:#1a0a3a;border:none;border-radius:11px;font-weight:800;font-size:15px;cursor:pointer;font-family:'Playfair Display',serif;text-decoration:none;text-align:center;box-sizing:border-box">👑 Pay $19 — Get Instant Pro Access</a>
       </div>
       <div style="border-top:1px solid rgba(212,175,55,.15);padding-top:18px">
         <div style="color:var(--dim);font-size:13px;margin-bottom:10px;text-align:center">Already paid? Enter your access code:</div>
@@ -1179,7 +1179,7 @@ function activatePro(){
     setTimeout(()=>{closePay();updateNavUI();},1500);
   } else {
     document.getElementById('code-error').style.color='#ff6b6b';
-    document.getElementById('code-error').textContent='❌ Invalid code. Purchase at selar.com/b437m02123';
+    document.getElementById('code-error').textContent='❌ Invalid code. Purchase at selar.com/r437442711 to get your Pro file';
   }
 }
 
@@ -1613,7 +1613,7 @@ async function runCareerPath(){
   const country=document.getElementById('cp-country').value;
   const goal=document.getElementById('cp-goal').value.trim();
   if(!role){alert('Please enter your current role.');return;}
-  const btn=document.querySelector('button[onclick="runCareerPath()"]');if(btn){btn.textContent='🔄 Predicting your path...';btn.disabled=true;}
+  const cpBtn=document.getElementById('cp-run-btn');if(cpBtn){cpBtn.textContent='🔄 Predicting your path...';cpBtn.disabled=true;}
 
   // Build visual timeline
   const steps=[role,'→','Mid Senior','→',goal||'Senior Lead','→','Director/Expert'];
@@ -1748,7 +1748,7 @@ async function runCultureTranslator(){
   if(!currentUser){openAuth('signup');return;}
   const input=document.getElementById('cft-input').value.trim();
   if(!input){alert('Please enter an achievement to translate.');return;}
-  const btn=document.querySelector('button[onclick="runCultureTranslator()"]');
+  const btn=document.getElementById('cft-run-btn');
   btn.textContent='🔄 Translating...';btn.disabled=true;
 
   const countries=[
@@ -1829,7 +1829,7 @@ async function runSkillGap(){
   const skills=document.getElementById('sgr-skills').value.trim();
   const country=document.getElementById('sgr-country').value.replace(/🇺🇸|🇬🇧|🇦🇺|🇨🇦|🇳🇿|🇯🇵/g,'').trim();
   if(!role){alert('Please enter your role.');return;}
-  const btn=document.querySelector('button[onclick="runSkillGap()"]');
+  const btn=document.getElementById('sgr-run-btn');
   btn.textContent='🔄 Analysing...';btn.disabled=true;
 
   try{
@@ -1910,7 +1910,7 @@ async function runVisaAssistant(){
   const exp=document.getElementById('visa-exp').value;
   const from=document.getElementById('visa-from').value.trim()||'Zimbabwe';
   if(!role){alert('Please enter your profession.');return;}
-  const btn=document.querySelector('button[onclick="runVisaAssistant()"]');
+  const btn=document.getElementById('visa-run-btn');
   btn.textContent='🔄 Finding pathways...';btn.disabled=true;
 
   try{
