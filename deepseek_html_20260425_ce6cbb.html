@@ -1,0 +1,8 @@
+<script>
+    // Simple password protection - runs before page loads
+    var adminPassword = prompt("Enter Admin Password:");
+    if (adminPassword !== "YourSecretAdminPassword2026!") {
+        document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:100px'>❌ Access Denied</h1><p style='text-align:center'>You do not have permission to access this page.</p>";
+        throw new Error("Access Denied");
+    }
+</script>
