@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerCraft AI | Global Career Intelligence Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-text">CareerCraft</span>
+                <span class="logo-badge">AI</span>
+                <span class="version-badge">v5.0</span>
+            </div>
+            <h1>Your professional identity.<br>Any country.<span class="gradient-text"> Instantly.</span></h1>
+            <p class="tagline">AI-Powered CVs • Interview Feedback • Real ATS Scoring</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="cv">📄 CV Generator</button>
+            <button class="tab-btn" data-tab="interview">🎤 Interview Simulator</button>
+            <button class="tab-btn" data-tab="history">📊 My History</button>
+        </div>
+
+        <div id="tab-cv" class="tab-content active">
+            <div class="main-grid">
+                <div class="card glass">
+                    <div class="card-header"><span class="card-icon">📝</span><h3>Your Information</h3></div>
+                    <div class="form-group"><label>🌍 Target Country</label><select id="country"><option value="USA">🇺🇸 USA</option><option value="Canada">🇨🇦 Canada</option><option value="UK">🇬🇧 UK</option><option value="Australia">🇦🇺 Australia</option><option value="Japan">🇯🇵 Japan</option><option value="NZ">🇳🇿 New Zealand</option></select></div>
+                    <div class="form-row"><div class="form-group"><label>👤 Full Name</label><input type="text" id="fullName" placeholder="Jane Smith"></div><div class="form-group"><label>📧 Email</label><input type="email" id="email" placeholder="jane@email.com"></div></div>
+                    <div class="form-group"><label>📞 Phone</label><input type="text" id="phone" placeholder="+1 (555) 123-4567"></div>
+                    <div class="form-group"><label>📄 Your Experience (min 20 characters)</label><textarea id="userExperience" placeholder="Marketing Manager at TechCorp (2021-2024)&#10;Increased engagement by 150%&#10;Led team of 4"></textarea></div>
+                    <div class="form-group"><label>🎯 Job Description</label><textarea id="jobDescription" placeholder="Paste job description for ATS matching..."></textarea></div>
+                    <button id="generateBtn" class="btn btn-primary btn-full">✨ Generate CV</button>
+                </div>
+                <div class="card glass">
+                    <div class="card-header"><span class="card-icon">📄</span><h3>Your CV</h3></div>
+                    <div id="cvOutput" class="cv-output"><div class="empty-state"><span class="empty-icon">📋</span><p>Your CV will appear here</p></div></div>
+                    <div class="button-group"><button id="copyBtn" class="btn btn-secondary">📋 Copy</button><button id="downloadBtn" class="btn btn-secondary">💾 Download</button></div>
+                </div>
+                <div class="card glass full-width">
+                    <div class="card-header"><span class="card-icon">🤖</span><h3>ATS Score</h3></div>
+                    <button id="atsBtn" class="btn btn-primary">🔍 Calculate ATS Score</button>
+                    <div id="atsOutput"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-interview" class="tab-content">
+            <div class="main-grid">
+                <div class="card glass">
+                    <div class="card-header"><span class="card-icon">🎤</span><h3>Interview Simulator</h3></div>
+                    <div class="form-group"><label>💼 Job Title</label><input type="text" id="jobTitle" placeholder="Marketing Manager"></div>
+                    <div class="form-group"><label>⭐ Tier</label><div class="tier-selector"><label class="tier-option"><input type="radio" name="tier" value="free" checked> Free (7 questions)</label><label class="tier-option"><input type="radio" name="tier" value="pro"> Pro (25 questions)</label></div></div>
+                    <button id="interviewBtn" class="btn btn-primary btn-full">🎙️ Generate Questions</button>
+                    <div id="questionsList"></div>
+                </div>
+                <div class="card glass">
+                    <div class="card-header"><span class="card-icon">💬</span><h3>Practice & Feedback</h3></div>
+                    <div id="currentQuestionDisplay" class="current-question"></div>
+                    <div class="form-group"><label>✍️ Your Answer</label><textarea id="userAnswer" placeholder="Type your answer here. Use specific examples and metrics." rows="5"></textarea></div>
+                    <button id="submitAnswerBtn" class="btn btn-primary btn-full">📊 Get AI Feedback</button>
+                    <div id="feedbackArea"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-history" class="tab-content">
+            <div class="card glass full-width">
+                <div class="card-header"><span class="card-icon">📊</span><h3>Interview History</h3></div>
+                <div id="historyList" class="history-list"><div class="empty-state">No history yet</div></div>
+            </div>
+        </div>
+
+        <div class="upsell-banner glass">
+            <div class="upsell-content">
+                <div class="upsell-text"><h4>🚀 Unlock Pro</h4><p>25 questions • Advanced AI feedback • Priority scoring</p></div>
+                <button id="proBtn" class="btn btn-pro">Upgrade — $12/mo</button>
+            </div>
+        </div>
+        <footer class="footer"><p>CareerCraft AI v5.0 — Production Ready</p></footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
